@@ -24,7 +24,7 @@ config :petal_pro, PetalProWeb.Endpoint,
   code_reloader: true,
   debug_errors: true,
   # SETUP_TODO: regenerate and replace this secret_key_base with `mix phx.gen.secret`
-  secret_key_base: "47TFd8fpLTZROcN4Lxz/OQ5fz4hVFMNCsSxHKwSrRGZGxDcWKyGH+1uxAtGYn1/Q",
+  secret_key_base: "r67t69h7/2Ihz/vV1Lhpy9d4l5pTLa34lVRqp91UqNm5TCSZx4rqFxRgSgzCdPcP",
   watchers: [
     # Start the esbuild watcher by calling Esbuild.install_and_run(:default, args)
     esbuild: {Esbuild, :install_and_run, [:default, ~w(--sourcemap=inline --watch)]},

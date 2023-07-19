@@ -20,17 +20,16 @@ import Config
 #   - github_url: (deletable) The URL to your Github account (used in the landing page footer)
 #   - discord_url: (deletable) The URL to your Discord invititation (used in the landing page footer)
 config :petal_pro,
-  app_name: "Petal",
-  business_name: "Petal Pty Ltd",
+  app_name: "Pangaea",
+  business_name: "Pangaea Conservation",
   support_email: "support@example.com",
   mailer_default_from_name: "Support",
   mailer_default_from_email: "support@example.com",
   logo_url_for_emails:
     "https://res.cloudinary.com/wickedsites/image/upload/v1643336799/petal/petal_logo_light_w5jvlg.png",
-  seo_description: "SaaS boilerplate template powered by Elixir's Phoenix and TailwindCSS",
-  twitter_url: "https://twitter.com/PetalFramework",
-  github_url: "https://github.com/petalframework",
-  discord_url: "https://discord.gg/exbwVbjAct"
+  seo_description: "Global conservation platform and crowdfunding",
+  twitter_url: "https://twitter.com/",
+  github_url: "https://github.com/pangaea_pro"
 
 # Petal Pro features:
 #   - impersonation_enabled?: Allows admins to impersonate users
@@ -134,7 +133,7 @@ config :ueberauth, Ueberauth,
 # SETUP_TODO - If you want to use Github auth, replace MyGithubUsername with your Github username
 config :ueberauth, Ueberauth.Strategy.Github.OAuth,
   headers: [
-    "user-agent": "MyGithubUsername"
+    "user-agent": "tomo10"
   ]
 
 config :petal_pro, :passwordless_enabled, true

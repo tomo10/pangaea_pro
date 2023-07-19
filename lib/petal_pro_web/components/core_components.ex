@@ -9,7 +9,6 @@ defmodule PetalProWeb.CoreComponents do
 
   # SETUP_TODO
   # This module relies on the following images. Replace these images with your logos.
-  # We created a Figma file to easily create and import these assets: https://www.figma.com/community/file/1139155923924401853
   # /priv/static/images/logo_dark.svg
   # /priv/static/images/logo_light.svg
   # /priv/static/images/logo_icon_dark.svg
