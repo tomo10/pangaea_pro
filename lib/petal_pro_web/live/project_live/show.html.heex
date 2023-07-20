@@ -3,14 +3,10 @@
     <.button
       link_type="live_patch"
       label="Edit Project"
-      to={~p"/projects/#{@project}/show/edit"}
+      to={~p"/app/projects/#{@project}/show/edit"}
     />
 
-    <.button
-      link_type="live_redirect"
-      label="Back"
-      to={~p"/projects"}
-    />
+    <.button link_type="live_redirect" label="Back" to={~p"/app/projects"} />
   </.page_header>
 
   <%= if @live_action in [:new, :edit] do %>
@@ -20,14 +16,13 @@
         id={@project.id || :new}
         action={@live_action}
         project={@project}
-        return_to={~p"/projects/#{@project}"}
+        return_to={~p"/app/projects/#{@project}"}
       />
     </.modal>
   <% end %>
 
   <div class="max-w-lg">
     <div class="grid grid-cols-1 gap-x-4 gap-y-8 sm:grid-cols-2">
-    
       <div class="sm:col-span-1">
         <div class="text-sm font-medium text-gray-500 dark:text-gray-400">
           Label
@@ -36,7 +31,7 @@
           <%= @project.label %>
         </div>
       </div>
-    
+
       <div class="sm:col-span-1">
         <div class="text-sm font-medium text-gray-500 dark:text-gray-400">
           Donation required
@@ -45,7 +40,7 @@
           <%= @project.donation_required %>
         </div>
       </div>
-    
+
       <div class="sm:col-span-1">
         <div class="text-sm font-medium text-gray-500 dark:text-gray-400">
           Date
@@ -54,7 +49,6 @@
           <%= @project.date %>
         </div>
       </div>
-    
     </div>
   </div>
 </.container>

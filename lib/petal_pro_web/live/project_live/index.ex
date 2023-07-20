@@ -1,9 +1,9 @@
 defmodule PetalProWeb.ProjectLive.Index do
   use PetalProWeb, :live_view
 
+  alias PetalFramework.Components.DataTable
   alias PetalPro.Projects
   alias PetalPro.Projects.Project
-  alias PetalFramework.Components.DataTable
 
   @data_table_opts [
     default_limit: 10,
@@ -45,13 +45,13 @@ defmodule PetalProWeb.ProjectLive.Index do
   end
 
   defp current_index_path(index_params) do
-    ~p"/projects?#{index_params || %{}}"
+    ~p"/app/projects?#{index_params || %{}}"
   end
 
   @impl true
   def handle_event("update_filters", params, socket) do
     query_params = DataTable.build_filter_params(socket.assigns.meta.flop, params)
-    {:noreply, push_patch(socket, to: ~p"/projects?#{query_params}")}
+    {:noreply, push_patch(socket, to: ~p"/app/projects?#{query_params}")}
   end
 
   @impl true

@@ -4,6 +4,7 @@ defmodule PetalProWeb.Router do
   import PetalProWeb.OrgPlugs
   import Phoenix.LiveDashboard.Router
   alias PetalProWeb.OnboardingPlug
+
   import PetalProWeb.UserImpersonationController
 
   pipeline :browser do
@@ -66,6 +67,13 @@ defmodule PetalProWeb.Router do
         {PetalProWeb.OrgOnMountHooks, :assign_org_data}
       ] do
       # Add live authenticated routes here
+      live "/projects", ProjectLive.Index, :index
+      live "/projects/new", ProjectLive.Index, :new
+      live "/projects/:id/edit", ProjectLive.Index, :edit
+
+      live "/projects/:id", ProjectLive.Show, :show
+      live "/projects/:id/show/edit", ProjectLive.Show, :edit
+
       live "/", DashboardLive
       live "/users/onboarding", UserOnboardingLive
       live "/users/edit-profile", EditProfileLive

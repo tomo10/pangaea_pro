@@ -1,6 +1,6 @@
 <.container class="py-16">
   <.page_header title="Listing Projects">
-    <.button link_type="live_patch" label="New Project" to={~p"/projects/new"} />
+    <.button link_type="live_patch" label="New Project" to={~p"/app/projects/new"} />
   </.page_header>
 
   <%= if @live_action in [:new, :edit] do %>
@@ -20,14 +20,14 @@
     <:col field={:label} sortable />
     <:col field={:donation_required} sortable />
     <:col field={:date} sortable />
-    <:col label="Actions" :let={project} align_right>
+    <:col :let={project} label="Actions" align_right>
       <.button
         color="primary"
         variant="outline"
         size="xs"
         link_type="live_redirect"
         label="Show"
-        to={~p"/projects/#{project}"}
+        to={~p"/app/projects/#{project}"}
       />
 
       <.button
@@ -36,7 +36,7 @@
         size="xs"
         link_type="live_patch"
         label="Edit"
-        to={~p"/projects/#{project}/edit"}
+        to={~p"/app/projects/#{project}/edit"}
       />
 
       <.button

@@ -30,6 +30,8 @@ defmodule PetalPro.Accounts.User do
 
     many_to_many :orgs, Org, join_through: "orgs_memberships", unique: true
 
+    has_many :projects, PetalPro.Projects.Project
+
     timestamps()
   end
 

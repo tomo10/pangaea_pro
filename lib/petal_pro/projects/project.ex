@@ -6,7 +6,8 @@ defmodule PetalPro.Projects.Project do
     field :date, :naive_datetime
     field :donation_required, :integer
     field :label, :string
-    field :user_id, :id
+
+    belongs_to :user, PetalPro.Accounts.User
 
     timestamps()
   end
@@ -14,7 +15,7 @@ defmodule PetalPro.Projects.Project do
   @doc false
   def changeset(project, attrs) do
     project
-    |> cast(attrs, [:label, :donation_required, :date])
+    |> cast(attrs, [:label, :donation_required, :date, :user_id])
     |> validate_required([:label, :donation_required, :date])
   end
 end

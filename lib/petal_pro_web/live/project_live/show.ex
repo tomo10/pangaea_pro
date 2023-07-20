@@ -18,7 +18,7 @@ defmodule PetalProWeb.ProjectLive.Show do
 
   @impl true
   def handle_event("close_modal", _, socket) do
-    {:noreply, push_patch(socket, to: ~p"/projects/#{socket.assigns.project}")}
+    {:noreply, push_patch(socket, to: ~p"/app/projects/#{socket.assigns.project}")}
   end
 
   defp page_title(:show), do: "Show Project"
