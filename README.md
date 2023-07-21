@@ -1,8 +1,8 @@
 <p align="center">
-  <img src="https://res.cloudinary.com/wickedsites/image/upload/v1650064156/petal/petal_pro_jbuqvj.png" height="128">
+  <img src="priv/static/images/logo_for_email.png" height="128">
 
   <p align="center">
-    Launch beautiful Phoenix web apps with this boilerplate project.
+    Join us on preserving the natural world
   </p>
 </p>
 
