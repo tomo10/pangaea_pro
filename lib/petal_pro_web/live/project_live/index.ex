@@ -11,8 +11,8 @@ defmodule PetalProWeb.ProjectLive.Index do
       order_by: [:id, :inserted_at],
       order_directions: [:asc, :asc]
     },
-    sortable: [:id, :inserted_at, :label, :donation_required, :date],
-    filterable: [:id, :inserted_at, :label, :donation_required, :date]
+    sortable: [:id, :inserted_at, :title, :description, :votes, :donation_required, :start_date],
+    filterable: [:id, :inserted_at, :title, :description, :votes, :donation_required, :start_date]
   ]
 
   @impl true
@@ -73,7 +73,7 @@ defmodule PetalProWeb.ProjectLive.Index do
   end
 
   defp assign_projects(socket, params) do
-    starting_query = Ecto.assoc(socket.assigns.current_user, :projects)
+    starting_query = Project
     {projects, meta} = DataTable.search(starting_query, params, @data_table_opts)
     assign(socket, projects: projects, meta: meta)
   end

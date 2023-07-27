@@ -3,11 +3,12 @@ defmodule PetalPro.Projects.Project do
   import Ecto.Changeset
 
   schema "projects" do
-    field :date, :naive_datetime
+    field :description, :string
     field :donation_required, :integer
-    field :label, :string
-
-    belongs_to :user, PetalPro.Accounts.User
+    field :start_date, :naive_datetime
+    field :title, :string
+    field :votes, :integer
+    field :user_id, :id
 
     timestamps()
   end
@@ -15,7 +16,7 @@ defmodule PetalPro.Projects.Project do
   @doc false
   def changeset(project, attrs) do
     project
-    |> cast(attrs, [:label, :donation_required, :date, :user_id])
-    |> validate_required([:label, :donation_required, :date])
+    |> cast(attrs, [:title, :description, :votes, :donation_required, :start_date])
+    |> validate_required([:title, :description, :votes, :donation_required, :start_date])
   end
 end

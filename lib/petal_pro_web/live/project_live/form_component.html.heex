@@ -6,11 +6,15 @@
     phx-change="validate"
     phx-submit="save">
     
-    <.field type="text" field={@form[:label]} />
+    <.field type="text" field={@form[:title]} />
+    
+    <.field type="text" field={@form[:description]} />
+    
+    <.field type="number" field={@form[:votes]} />
     
     <.field type="number" field={@form[:donation_required]} />
     
-    <.field type="datetime-local" field={@form[:date]} />
+    <.field type="datetime-local" field={@form[:start_date]} />
     
     <div class="flex justify-end">
       <.button

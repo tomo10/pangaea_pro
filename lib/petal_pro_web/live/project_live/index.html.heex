@@ -11,23 +11,17 @@
         action={@live_action}
         project={@project}
         return_to={current_index_path(@index_params)}
-        current_user={@current_user}
       />
     </.modal>
   <% end %>
 
-  <%!-- <.card :for={project <- @projects}>
-    <.card_content category="Article" class="max-w-sm" heading={project.label}>
-      <%= project.label %>
-    </.card_content>
-    <.button link_type="live_patch" label="Show" to={~p"/app/projects/#{project}"} />
-  </.card> --%>
-
   <.data_table :if={@index_params} meta={@meta} items={@projects}>
     <:if_empty>No projects found</:if_empty>
-    <:col field={:label} sortable />
+    <:col field={:title} sortable />
+    <:col field={:description} sortable />
+    <:col field={:votes} sortable />
     <:col field={:donation_required} sortable />
-    <:col field={:date} sortable />
+    <:col field={:start_date} sortable />
     <:col :let={project} label="Actions" align_right>
       <.button
         color="primary"
