@@ -8,6 +8,7 @@ defmodule PetalPro.Projects.Project do
     field :start_date, :naive_datetime
     field :title, :string
     field :votes, :integer
+    field :image_upload, :string
     field :user_id, :id
 
     timestamps()
@@ -16,7 +17,7 @@ defmodule PetalPro.Projects.Project do
   @doc false
   def changeset(project, attrs) do
     project
-    |> cast(attrs, [:title, :description, :votes, :donation_required, :start_date])
+    |> cast(attrs, [:title, :description, :votes, :donation_required, :start_date, :image_upload])
     |> validate_required([:title, :description, :votes, :donation_required, :start_date])
   end
 end

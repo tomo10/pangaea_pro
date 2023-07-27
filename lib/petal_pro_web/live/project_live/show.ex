@@ -24,11 +24,9 @@ defmodule PetalProWeb.ProjectLive.Show do
   def handle_event("up_vote", %{"id" => id}, socket) do
     project = Projects.get_project!(id)
 
-    new_votes = project.votes + 1
+    {:ok, project} = Projects.update_project(project, %{votes: project.votes + 1})
 
-    {:ok, project} = Projects.update_project(project, %{votes: new_votes})
-
-    {:noreply, socket}
+    {:noreply, assign(socket, project: project)}
   end
 
   defp page_title(:show), do: "Show Project"
