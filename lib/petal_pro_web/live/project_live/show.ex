@@ -21,6 +21,16 @@ defmodule PetalProWeb.ProjectLive.Show do
     {:noreply, push_patch(socket, to: ~p"/app/projects/#{socket.assigns.project}")}
   end
 
+  def handle_event("up_vote", %{"id" => id}, socket) do
+    project = Projects.get_project!(id)
+
+    new_votes = project.votes + 1
+
+    {:ok, project} = Projects.update_project(project, %{votes: new_votes})
+
+    {:noreply, socket}
+  end
+
   defp page_title(:show), do: "Show Project"
   defp page_title(:edit), do: "Edit Project"
 end

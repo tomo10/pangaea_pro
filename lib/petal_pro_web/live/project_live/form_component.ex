@@ -42,7 +42,15 @@ defmodule PetalProWeb.ProjectLive.FormComponent do
 
   defp save_project(socket, :new, project_params) do
     case Projects.create_project(project_params) do
-      {:ok, _project} ->
+      {:ok, project} ->
+        PetalPro.Logs.log("create_project", %{
+          user: socket.assigns.current_user,
+          metadata: %{
+            project_id: project.id,
+            project_title: project.title
+          }
+        })
+
         {:noreply,
          socket
          |> put_flash(:info, "Project created successfully")
