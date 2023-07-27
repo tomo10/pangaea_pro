@@ -73,7 +73,7 @@ defmodule PetalProWeb.ProjectLive.Index do
   end
 
   defp assign_projects(socket, params) do
-    starting_query = Project
+    starting_query = Ecto.assoc(socket.assigns.current_user, :projects)
     {projects, meta} = DataTable.search(starting_query, params, @data_table_opts)
     assign(socket, projects: projects, meta: meta)
   end

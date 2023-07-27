@@ -2,26 +2,38 @@
   <.form
     for={@form}
     id="project-form"
+    multipart
     phx-target={@myself}
     phx-change="validate"
-    phx-submit="save">
-    
+    phx-submit="save"
+  >
+    <div phx-drop-target={@uploads.image.ref}>
+      <%!-- <.label>Image</.label> --%>
+      <.live_file_input upload={@uploads.image} />
+    </div>
+
+    <%= for image <- @uploads.image.entries do %>
+      <div class="mt-4">
+        <.live_img_preview entry={image} width="60" />
+      </div>
+      <progress value={image.progress} max="100" />
+      <%= for err <- upload_errors(@uploads.image, image) do %>
+        <.error><%= err %></.error>
+      <% end %>
+    <% end %>
+
     <.field type="text" field={@form[:title]} />
-    
+
     <.field type="text" field={@form[:description]} />
-    
+
     <.field type="number" field={@form[:votes]} />
-    
+
     <.field type="number" field={@form[:donation_required]} />
-    
+
     <.field type="datetime-local" field={@form[:start_date]} />
-    
+
     <div class="flex justify-end">
-      <.button
-        type="submit"
-        phx-disable-with="Saving..."
-        label="Save"
-      />
+      <.button type="submit" phx-disable-with="Saving..." label="Save" />
     </div>
   </.form>
 </div>

@@ -70,6 +70,15 @@
           <%= @project.start_date %>
         </div>
       </div>
+
+      <div class="sm:col-span-1">
+        <div class="text-sm font-medium text-gray-500 dark:text-gray-400">
+          Pictures
+        </div>
+        <div>
+          <img alt="project image" width="200" src={@project.image_upload} />
+        </div>
+      </div>
     </div>
   </div>
 </.container>

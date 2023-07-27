@@ -10,7 +10,13 @@ defmodule PetalProWeb.ProjectLive.FormComponent do
     {:ok,
      socket
      |> assign(assigns)
-     |> assign_form(changeset)}
+     |> assign_form(changeset)
+     |> allow_upload(:image,
+       accept: ~w(.jpg .jpeg .png),
+       max_entries: 1,
+       max_file_size: 9_000_000,
+       auto_upload: true
+     )}
   end
 
   @impl true
@@ -27,7 +33,9 @@ defmodule PetalProWeb.ProjectLive.FormComponent do
     save_project(socket, socket.assigns.action, project_params)
   end
 
-  defp save_project(socket, :edit, project_params) do
+  defp save_project(socket, :edit, params) do
+    project_params = params_with_image(socket, params)
+
     case Projects.update_project(socket.assigns.project, project_params) do
       {:ok, _project} ->
         {:noreply,
@@ -40,7 +48,9 @@ defmodule PetalProWeb.ProjectLive.FormComponent do
     end
   end
 
-  defp save_project(socket, :new, project_params) do
+  defp save_project(socket, :new, params) do
+    project_params = params_with_image(socket, params)
+
     case Projects.create_project(project_params) do
       {:ok, project} ->
         PetalPro.Logs.log("create_project", %{
@@ -59,6 +69,19 @@ defmodule PetalProWeb.ProjectLive.FormComponent do
       {:error, %Ecto.Changeset{} = changeset} ->
         {:noreply, assign_form(socket, changeset)}
     end
+  end
+
+  def params_with_image(socket, params) do
+    path = socket |> consume_uploaded_entries(:image, &upload_static_file/2) |> List.first()
+    Map.put(params, "image_upload", path)
+  end
+
+  defp upload_static_file(%{path: path}, _entry) do
+    # Plug in your production image file persistence implementation here!
+    filename = Path.basename(path)
+    dest = Path.join("priv/static/images", filename)
+    File.cp!(path, dest)
+    {:ok, ~p"/images/#{filename}"}
   end
 
   defp assign_form(socket, %Ecto.Changeset{} = changeset) do
