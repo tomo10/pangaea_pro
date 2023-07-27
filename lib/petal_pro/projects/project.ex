@@ -27,6 +27,14 @@ defmodule PetalPro.Projects.Project do
       :image_upload,
       :user_id
     ])
-    |> validate_required([:title, :description, :votes, :donation_required, :start_date, :user_id])
+    |> validate_required([
+      :title,
+      :description,
+      :votes,
+      :donation_required,
+      :start_date,
+      :image_upload,
+      :user_id
+    ])
   end
 end
