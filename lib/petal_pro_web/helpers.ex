@@ -16,15 +16,6 @@ defmodule PetalProWeb.Helpers do
     PetalProWeb.Menus.public_menu_items(current_user)
   end
 
-  @spec get_menu_item(atom, any) ::
-          nil
-          | %{
-              :icon => atom,
-              :label => binary,
-              :name => atom,
-              :path => any,
-              optional(:method) => :delete
-            }
   def get_menu_item(name, current_user) do
     PetalProWeb.Menus.get_link(name, current_user)
   end

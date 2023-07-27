@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="priv/static/images/logo_for_email.png" height="128">
+  <img src="/priv/static/images/logo_for_email.png" height="128">
 
   <p align="center">
     Join us on preserving the natural world

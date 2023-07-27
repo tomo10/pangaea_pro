@@ -16,6 +16,13 @@
     </.modal>
   <% end %>
 
+  <%!-- <.card :for={project <- @projects}>
+    <.card_content category="Article" class="max-w-sm" heading={project.label}>
+      <%= project.label %>
+    </.card_content>
+    <.button link_type="live_patch" label="Show" to={~p"/app/projects/#{project}"} />
+  </.card> --%>
+
   <.data_table :if={@index_params} meta={@meta} items={@projects}>
     <:if_empty>No projects found</:if_empty>
     <:col field={:label} sortable />
