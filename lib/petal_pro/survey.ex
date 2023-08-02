@@ -1,12 +1,12 @@
-defmodule PetalPro.Suvery do
+defmodule PetalPro.Survey do
   @moduledoc """
-  The Suvery context.
+  The Survey context.
   """
 
   import Ecto.Query, warn: false
   alias PetalPro.Repo
 
-  alias PetalPro.Suvery.Demographic
+  alias PetalPro.Survey.Demographic
 
   @doc """
   Returns the list of demographics.
@@ -100,5 +100,9 @@ defmodule PetalPro.Suvery do
   """
   def change_demographic(%Demographic{} = demographic, attrs \\ %{}) do
     Demographic.changeset(demographic, attrs)
+  end
+
+  def get_demographic_by_user(user) do
+    Demographic.Query.for_user(user) |> Repo.one()
   end
 end

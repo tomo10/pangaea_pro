@@ -1,7 +1,7 @@
-defmodule PetalPro.SuveryFixtures do
+defmodule PetalPro.SurveyFixtures do
   @moduledoc """
   This module defines test helpers for creating
-  entities via the `PetalPro.Suvery` context.
+  entities via the `PetalPro.Survey` context.
   """
 
   @doc """
@@ -14,7 +14,7 @@ defmodule PetalPro.SuveryFixtures do
         nationality: "some nationality",
         year_of_birth: 42
       })
-      |> PetalPro.Suvery.create_demographic()
+      |> PetalPro.Survey.create_demographic()
 
     demographic
   end

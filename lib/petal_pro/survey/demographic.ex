@@ -1,4 +1,4 @@
-defmodule PetalPro.Suvery.Demographic do
+defmodule PetalPro.Survey.Demographic do
   use Ecto.Schema
   import Ecto.Changeset
   alias PetalPro.Accounts.User
