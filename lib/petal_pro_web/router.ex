@@ -74,6 +74,8 @@ defmodule PetalProWeb.Router do
       live "/projects/:id", ProjectLive.Show, :show
       live "/projects/:id/show/edit", ProjectLive.Show, :edit
 
+      live "/people", PeopleLive, :index
+
       live "/", DashboardLive
       live "/users/onboarding", UserOnboardingLive
       live "/users/edit-profile", EditProfileLive
