@@ -34,7 +34,9 @@ defmodule PetalProWeb.ProjectLive.FormComponent do
   end
 
   defp save_project(socket, :edit, params) do
-    project_params = params_with_image(socket, params)
+    with_image_params = params_with_image(socket, params)
+
+    project_params = Map.put(with_image_params, "user_id", socket.assigns.current_user.id)
 
     case Projects.update_project(socket.assigns.project, project_params) do
       {:ok, _project} ->
