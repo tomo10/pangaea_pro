@@ -23,7 +23,8 @@ defmodule PetalProWeb.Menus do
     do:
       build_menu(
         [
-          :projects
+          :projects,
+          :people
         ],
         current_user
       )
@@ -176,8 +177,17 @@ defmodule PetalProWeb.Menus do
     %{
       name: name,
       label: gettext("Projects"),
-      path: ~p"/app",
+      path: ~p"/app/projects",
       icon: :rectangle_group
+    }
+  end
+
+  def get_link(:people = name, _current_user) do
+    %{
+      name: name,
+      label: gettext("People"),
+      path: ~p"/app/people",
+      icon: :users
     }
   end
 
