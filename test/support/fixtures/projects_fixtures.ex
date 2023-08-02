@@ -11,39 +11,6 @@ defmodule PetalPro.ProjectsFixtures do
     {:ok, project} =
       attrs
       |> Enum.into(%{
-        date: ~N[2023-07-19 13:16:00],
-        donation_required: 42,
-        label: "some label"
-      })
-      |> PetalPro.Projects.create_project()
-
-    project
-  end
-
-  @doc """
-  Generate a project.
-  """
-  def project_fixture(attrs \\ %{}) do
-    {:ok, project} =
-      attrs
-      |> Enum.into(%{
-        description: "some description",
-        donation_required: 42,
-        start_date: ~N[2023-07-26 15:13:00],
-        title: "some title"
-      })
-      |> PetalPro.Projects.create_project()
-
-    project
-  end
-
-  @doc """
-  Generate a project.
-  """
-  def project_fixture(attrs \\ %{}) do
-    {:ok, project} =
-      attrs
-      |> Enum.into(%{
         description: "some description",
         donation_required: 42,
         start_date: ~N[2023-07-26 15:19:00],
