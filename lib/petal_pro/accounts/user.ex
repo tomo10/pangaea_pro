@@ -31,6 +31,7 @@ defmodule PetalPro.Accounts.User do
     many_to_many :orgs, Org, join_through: "orgs_memberships", unique: true
 
     has_many :projects, PetalPro.Projects.Project
+    has_many :comments, PetalPro.Projects.Comment
 
     timestamps()
   end

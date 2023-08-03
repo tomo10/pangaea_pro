@@ -182,4 +182,60 @@ defmodule PetalPro.ProjectsTest do
       assert %Ecto.Changeset{} = Projects.change_project(project)
     end
   end
+
+  describe "comments" do
+    alias PetalPro.Projects.Comment
+
+    import PetalPro.ProjectsFixtures
+
+    @invalid_attrs %{content: nil, creation_date: nil}
+
+    test "list_comments/0 returns all comments" do
+      comment = comment_fixture()
+      assert Projects.list_comments() == [comment]
+    end
+
+    test "get_comment!/1 returns the comment with given id" do
+      comment = comment_fixture()
+      assert Projects.get_comment!(comment.id) == comment
+    end
+
+    test "create_comment/1 with valid data creates a comment" do
+      valid_attrs = %{content: "some content", creation_date: ~D[2023-08-02]}
+
+      assert {:ok, %Comment{} = comment} = Projects.create_comment(valid_attrs)
+      assert comment.content == "some content"
+      assert comment.creation_date == ~D[2023-08-02]
+    end
+
+    test "create_comment/1 with invalid data returns error changeset" do
+      assert {:error, %Ecto.Changeset{}} = Projects.create_comment(@invalid_attrs)
+    end
+
+    test "update_comment/2 with valid data updates the comment" do
+      comment = comment_fixture()
+      update_attrs = %{content: "some updated content", creation_date: ~D[2023-08-03]}
+
+      assert {:ok, %Comment{} = comment} = Projects.update_comment(comment, update_attrs)
+      assert comment.content == "some updated content"
+      assert comment.creation_date == ~D[2023-08-03]
+    end
+
+    test "update_comment/2 with invalid data returns error changeset" do
+      comment = comment_fixture()
+      assert {:error, %Ecto.Changeset{}} = Projects.update_comment(comment, @invalid_attrs)
+      assert comment == Projects.get_comment!(comment.id)
+    end
+
+    test "delete_comment/1 deletes the comment" do
+      comment = comment_fixture()
+      assert {:ok, %Comment{}} = Projects.delete_comment(comment)
+      assert_raise Ecto.NoResultsError, fn -> Projects.get_comment!(comment.id) end
+    end
+
+    test "change_comment/1 returns a comment changeset" do
+      comment = comment_fixture()
+      assert %Ecto.Changeset{} = Projects.change_comment(comment)
+    end
+  end
 end

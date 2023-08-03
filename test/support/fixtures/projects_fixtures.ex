@@ -21,4 +21,19 @@ defmodule PetalPro.ProjectsFixtures do
 
     project
   end
+
+  @doc """
+  Generate a comment.
+  """
+  def comment_fixture(attrs \\ %{}) do
+    {:ok, comment} =
+      attrs
+      |> Enum.into(%{
+        content: "some content",
+        creation_date: ~D[2023-08-02]
+      })
+      |> PetalPro.Projects.create_comment()
+
+    comment
+  end
 end

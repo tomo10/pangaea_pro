@@ -10,7 +10,8 @@ defmodule PetalPro.Projects.Project do
     field(:votes, :integer)
     field(:image_upload, :string)
 
-    belongs_to(:user, Projects.Accounts.User)
+    belongs_to(:user, PetalPro.Accounts.User)
+    has_many(:comments, PetalPro.Projects.Comment)
 
     timestamps()
   end
