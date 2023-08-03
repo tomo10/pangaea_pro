@@ -1,0 +1,21 @@
+<.layout current_page={:home} current_user={@current_user} type="sidebar">
+  <.container class="py-16">
+    <%!-- <.h2><%= gettext("Welcome, %{name}", name: user_name(@current_user)) %> 👋</.h2> --%>
+
+    <div class="px-4 py-8 sm:px-0">
+      <div :for={project <- @projects} class="flex justify-center">
+        <.card class="max-w-lg mb-16">
+          <.card_media src={project.image_upload} aspect_ratio_class="2" />
+          <.card_content category="Conservation" heading={project.title}>
+            <%= project.description %>
+          </.card_content>
+          <.card_footer>
+            <.link navigate={"/app/projects/#{project.id}"}>
+              <HeroiconsV1.Solid.eye class="w-4 h-4 mr-2" />
+            </.link>
+          </.card_footer>
+        </.card>
+      </div>
+    </div>
+  </.container>
+</.layout>

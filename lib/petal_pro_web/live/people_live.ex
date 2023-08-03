@@ -8,15 +8,18 @@ defmodule PetalProWeb.PeopleLive do
 
   @impl true
   def mount(_params, _session, socket) do
-    {:ok, assign_demographic(socket)}
+    {:ok,
+     socket
+     |> assign_demographic()
+     |> assign_users()}
   end
 
   defp assign_demographic(%{assigns: %{current_user: current_user}} = socket) do
     assign(
       socket,
-      demographic: Survey.get_demographic_by_user(current_user)
+      :demographic,
+      Survey.get_demographic_by_user(current_user)
     )
-    |> assign_users()
   end
 
   defp assign_users(socket) do
