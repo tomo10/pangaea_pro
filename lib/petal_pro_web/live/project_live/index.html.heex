@@ -1,58 +1,60 @@
-<.container class="py-16">
-  <.page_header title="Listing Projects">
-    <.button link_type="live_patch" label="New Project" to={~p"/app/projects/new"} />
-  </.page_header>
+<.layout current_page={:projects} current_user={@current_user} type="sidebar">
+  <.container class="py-16">
+    <.page_header title="My Projects">
+      <.button link_type="live_patch" label="New Project" to={~p"/app/projects/new"} />
+    </.page_header>
 
-  <%= if @live_action in [:new, :edit] do %>
-    <.modal title={@page_title}>
-      <.live_component
-        module={PetalProWeb.ProjectLive.FormComponent}
-        id={@project.id || :new}
-        action={@live_action}
-        project={@project}
-        return_to={current_index_path(@index_params)}
-        current_user={@current_user}
-      />
-    </.modal>
-  <% end %>
+    <%= if @live_action in [:new, :edit] do %>
+      <.modal title={@page_title}>
+        <.live_component
+          module={PetalProWeb.ProjectLive.FormComponent}
+          id={@project.id || :new}
+          action={@live_action}
+          project={@project}
+          return_to={current_index_path(@index_params)}
+          current_user={@current_user}
+        />
+      </.modal>
+    <% end %>
 
-  <.data_table :if={@index_params} meta={@meta} items={@projects}>
-    <:if_empty>No projects found</:if_empty>
-    <:col field={:title} sortable />
-    <:col field={:description} sortable />
-    <:col field={:votes} sortable />
-    <:col field={:donation_required} sortable />
-    <:col field={:start_date} sortable />
-    <:col :let={project} label="Actions" align_right>
-      <.button
-        color="primary"
-        variant="outline"
-        size="xs"
-        link_type="live_redirect"
-        label="Show"
-        to={~p"/app/projects/#{project}"}
-      />
+    <.data_table :if={@index_params} meta={@meta} items={@projects}>
+      <:if_empty>No projects found</:if_empty>
+      <:col field={:title} sortable />
+      <:col field={:description} sortable />
+      <:col field={:votes} sortable />
+      <:col field={:donation_required} sortable />
+      <:col field={:start_date} sortable />
+      <:col :let={project} label="Actions" align_right>
+        <.button
+          color="primary"
+          variant="outline"
+          size="xs"
+          link_type="live_redirect"
+          label="Show"
+          to={~p"/app/projects/#{project}"}
+        />
 
-      <.button
-        color="white"
-        variant="outline"
-        size="xs"
-        link_type="live_patch"
-        label="Edit"
-        to={~p"/app/projects/#{project}/edit"}
-      />
+        <.button
+          color="white"
+          variant="outline"
+          size="xs"
+          link_type="live_patch"
+          label="Edit"
+          to={~p"/app/projects/#{project}/edit"}
+        />
 
-      <.button
-        color="danger"
-        variant="outline"
-        link_type="a"
-        to="#"
-        size="xs"
-        label="Delete"
-        phx-click="delete"
-        phx-value-id={project.id}
-        data-confirm="Are you sure?"
-      />
-    </:col>
-  </.data_table>
-</.container>
+        <.button
+          color="danger"
+          variant="outline"
+          link_type="a"
+          to="#"
+          size="xs"
+          label="Delete"
+          phx-click="delete"
+          phx-value-id={project.id}
+          data-confirm="Are you sure?"
+        />
+      </:col>
+    </.data_table>
+  </.container>
+</.layout>

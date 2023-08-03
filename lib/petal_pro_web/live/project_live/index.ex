@@ -39,7 +39,7 @@ defmodule PetalProWeb.ProjectLive.Index do
 
   defp apply_action(socket, :index, params) do
     socket
-    |> assign(:page_title, "Listing Projects")
+    |> assign(:page_title, "My Projects")
     |> assign_projects(params)
     |> assign(index_params: params)
   end
