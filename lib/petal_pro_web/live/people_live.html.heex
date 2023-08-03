@@ -1,6 +1,6 @@
 <.layout current_page={:people} current_user={@current_user} type="sidebar">
   <.container class="py-16">
-    <.h2>Here are some other cool people using Pangaea</.h2>
+    <.h2>Here are some other legends using Pangaea</.h2>
     <%= if @demographic do %>
       <DemographicLive.Show.details demographic={@demographic} />
     <% else %>
@@ -10,9 +10,36 @@
     <% end %>
 
     <div class="px-4 py-8 sm:px-0">
-      <div class="flex items-center justify-center border-4 border-gray-300 border-dashed rounded-lg dark:border-gray-800 h-96">
-        <%!-- <div class="text-xl">Here are the other cool people using Pangaea 🚀</div> --%>
-      </div>
+      <.table>
+        <.tr>
+          <.th>Name</.th>
+          <.th>Title</.th>
+          <.th>Phone</.th>
+          <.th>Status</.th>
+        </.tr>
+
+        <div :for={user <- @users}>
+          <.tr>
+            <.td>
+              <.user_inner_td
+                avatar_assigns={
+                  %{
+                    src:
+                      "https://res.cloudinary.com/wickedsites/image/upload/v1636595188/dummy_data/avatar_2_jhs6ww.png"
+                  }
+                }
+                label={user.name}
+                sub_label={user.email}
+              />
+            </.td>
+            <.td>Engineer</.td>
+            <.td class="whitespace-nowrap">{user.date}</.td>
+            <.td>
+              <.badge color="success" label="Active" />
+            </.td>
+          </.tr>
+        </div>
+      </.table>
     </div>
   </.container>
 </.layout>

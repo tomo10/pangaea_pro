@@ -1,4 +1,5 @@
 defmodule PetalProWeb.PeopleLive do
+  alias PetalPro.Accounts
   alias PetalPro.Survey
   alias PetalProWeb.DemographicLive
   alias __MODULE__.Component
@@ -13,8 +14,16 @@ defmodule PetalProWeb.PeopleLive do
   defp assign_demographic(%{assigns: %{current_user: current_user}} = socket) do
     assign(
       socket,
-      :demographic,
-      Survey.get_demographic_by_user(current_user)
+      demographic: Survey.get_demographic_by_user(current_user)
+    )
+    |> assign_users()
+  end
+
+  defp assign_users(socket) do
+    assign(
+      socket,
+      :users,
+      Accounts.get_users()
     )
   end
 end
