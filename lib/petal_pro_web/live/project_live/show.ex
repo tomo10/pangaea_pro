@@ -1,4 +1,5 @@
 defmodule PetalProWeb.ProjectLive.Show do
+  use Timex
   use PetalProWeb, :live_view
 
   alias PetalPro.Projects
@@ -19,7 +20,7 @@ defmodule PetalProWeb.ProjectLive.Show do
      socket
      |> assign(:page_title, page_title(socket.assigns.live_action))
      |> assign(:project, project)
-     |> assign(:comments, comments)
+     |> stream(:comments, comments)
      |> assign(:form, to_form(changeset))}
   end
 
@@ -39,13 +40,15 @@ defmodule PetalProWeb.ProjectLive.Show do
   def handle_event("send_message", %{"comment" => %{"message" => message}}, socket) do
     comment_attrs = %{
       content: message,
-      creation_date: ~D[2023-08-03],
+      creation_date: Timex.now(),
       project_id: socket.assigns.project.id,
       user_id: socket.assigns.current_user.id
     }
 
     case Projects.create_comment(comment_attrs) do
-      {:ok, _comment} ->
+      {:ok, comment} ->
+        socket = stream_insert(socket, :comments, comment)
+
         {:noreply, assign(socket, :form, to_form(Projects.change_comment(%Comment{})))}
 
       {:error, changeset} ->
