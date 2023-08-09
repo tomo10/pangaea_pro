@@ -2,6 +2,10 @@ defmodule PetalPro.Projects.Project do
   use Ecto.Schema
   import Ecto.Changeset
 
+  # think what categories are needed so can filter by:
+  # type: dontation vs awareness
+  # category: carbon capture, land protection, animal protection
+
   schema "projects" do
     field(:description, :string)
     field(:donation_required, :integer)

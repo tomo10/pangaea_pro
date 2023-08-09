@@ -14,7 +14,7 @@ defmodule PetalProWeb.ProjectLive.Show do
   def handle_params(%{"id" => id}, _, socket) do
     project = Projects.get_project!(id)
     comments = Projects.list_comments_from_project(project)
-    changeset = Comment.changeset(%Comment{}, %{project: project})
+    changeset = Comment.changeset(%Comment{}, %{})
 
     {:noreply,
      socket

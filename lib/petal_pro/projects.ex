@@ -129,7 +129,8 @@ defmodule PetalPro.Projects do
   """
 
   def list_comments_from_project(project) do
-    Comments.Query.for_project(project) |> Repo.all()
+    Comments.Query.for_project(project)
+    |> Repo.all()
   end
 
   @doc """

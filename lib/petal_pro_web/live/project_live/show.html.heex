@@ -70,10 +70,11 @@
     <div id="comments" phx-update="stream" class="py-8 justify-items-center align-items-center">
       <div
         :for={{comment_id, comment} <- @streams.comments}
-        class="flex justify-between mt-1 text-sm text-gray-900 dark:text-gray-100"
+        class="flex justify-between p-4 mt-1 text-sm rounded-md bg-slate-800 text-gray-900 dark:text-gray-100"
         id={comment_id}
       >
         <%= comment.content %>
+        <%!-- <%= comment.user.name %> --%>
         <.local_time for={comment.creation_date} />
       </div>
     </div>
