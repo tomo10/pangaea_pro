@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="/priv/static/images/logo_for_email.png" height="128">
+  <img src="/priv/static/images/logo_for_emails.png" height="128">
 
   <p align="center">
     Join us on preserving the natural world
@@ -10,9 +10,13 @@
   <a href="https://docs.petal.build">DOCS</a>
 </p>
 
-## Launching new projects
+## Manifesto
 
-We recommend downloading the latest version from the "Releases" section. The `main` branch will be the most recent but there is a slightly higher chance of bugs (although we will endeavour to keep the `main` branch as stable as possible).
+In the relatively short time that humans have been the dominant species on this planet, the natural world has seen enormous suffering. By acting with scant regard for the natural world we have pushed animals to extinction and our rainforests and other biodiverse regions to the brink. This has profound implications for the future of our planet and the millions of species that call it home.
+
+As a planet of 7bn people we have struggled to gather the collective wisdom, garner the will, in order to coordinate and prevent the attrocities that are befalling our natural world on a daily basis. This has severe implications not only for the regions that we call home and the animals that share it with, but also for us. If, like me, you wonder are we fighting for our own futures, for theirs, or for the futures of every living thing on this planet, the fact is a world that is less biodiverse is a poorer one for all.
+
+What can be done?
 
 ## Get up and running
 
@@ -55,6 +59,14 @@ Port: 5432
 User: postgres
 Password: postgres
 ```
+
+If running from Docker Desktop terminal go to Terminal tab
+
+`psql -Upostgres`
+`\l` lists available databaes in PSQL server
+`\c petal_pro_dev` connects to dev database
+
+`\! clear` clears screen
 
 ## Renaming
 
