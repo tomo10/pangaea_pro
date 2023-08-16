@@ -10,7 +10,7 @@ defmodule PetalProWeb.Menus do
   def public_menu_items(_user \\ nil),
     do: [
       %{label: gettext("Manifesto"), path: "/#manifesto"},
-      %{label: gettext("Testimonials"), path: "/#testimonials"}
+      %{label: gettext("About us"), path: "/#about_us"}
     ]
 
   # Signed out main menu

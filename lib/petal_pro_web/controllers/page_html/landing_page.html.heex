@@ -213,22 +213,78 @@
     %{
       title: "The problem",
       description:
-        "In the relatively short time that humans have been the dominant species on this planet, the natural world has seen enormous suffering. By acting with scant regard for the natural world we have pushed animals to extinction and our rainforests and other biodiverse regions to the brink. This has profound implications for the future of our planet and the millions of species that call it home.",
+        "In the relatively short time that humans have been the dominant species on this planet, the natural world has seen enormous suffering. By acting with scant regard for this planet we call home, we have pushed animals to extinction and our rainforests and other biodiverse regions to the brink. This has profound implications for the future of our planet and the millions of species that call it home",
       icon: :puzzle_piece
     },
     %{
-      title: "The collective",
+      title: "Us",
       description:
-        "As a group of 8bn people we have struggled to gather the collective wisdom or garner the will to coordinate and prevent the attrocities that are befalling our natural world on a daily basis. This has severe implications not only for the regions that we call home and the animals that we share it with, but also for us. If, like me, you wonder are we fighting for our own futures, for theirs, or for the futures of every living thing on this planet, the fact is a less biodiverse world is a poorer one for allkind.",
+        "As a group of 8bn people we have struggled to gather the collective wisdom or garner the collective will to coordinate and prevent the attrocities that are befalling our natural world on a daily basis. However people around the world are doing extraordinary things everyday in fields such as conservation, carbon capture, renewables, and countless other efforts in order to move us from a world reliant on technologies and food that, when opearted on the current scale, are destroying vital eco systems imperitive to the functioning of the planet",
       icon: :user_group
     },
     %{
       title: "The solution",
       description:
-        "People around the world are doing extraordinary things everyday in fields such as conservation, carbon capture, renewables, and countless other efforts in order to move us from a world reliant on technologies and food that, when opearted on the current scale, are destroying vital eco systems imperitive in the functioning of the planet.",
+        "However the vast majority of us do not work in these fields, and it is the vast majority that, by their very nature, have the decisive say in how things unfold from here. The adage of “it is only one straw, said a billion people” speaks to what can be done if we come together and engage in things that we can affect. Very few of us have the ability or knowledge to build a solar panel or battery cell. But we all have the ability, and I would argue the duty, to do whatever we can, little or large, to protect this planet, our remarkable home",
       icon: :rocket_launch
     }
   ]}
   max_width={max_width}
+/>
+
+<LandingPage.solo_feature
+  title={gettext("Conservation crowdfunding platform")}
+  description={
+    gettext(
+      "We invite conservationists or anyone working on solutions to protect the planet to register and share their projects / stories"
+    )
+  }
+  image_src={~p"/images/landing_page/feature1.svg"}
+  background_color="primary"
+  max_width={max_width}
 >
-</LandingPage.manifesto>
+  <.button
+    variant="solid"
+    link_type="a"
+    to="/test-page"
+    label={gettext("More info")}
+    color="primary"
+    size="lg"
+    class="mt-8"
+  />
+</LandingPage.solo_feature>
+
+<LandingPage.solo_feature
+  inverted
+  title={gettext("Supoort and donations")}
+  description={
+    gettext(
+      "We invite those who want to support these people doing vital work to in whatever way they can"
+    )
+  }
+  image_src={~p"/images/landing_page/feature2.svg"}
+  background_color="secondary"
+  max_width={max_width}
+/>
+
+<LandingPage.solo_feature
+  title={gettext("Environmentally conscious brands")}
+  description={
+    gettext(
+      "We invite companies where the environment is central to their ethos to promote their companies on this site"
+    )
+  }
+  image_src={~p"/images/landing_page/feature1.svg"}
+  background_color="primary"
+  max_width={max_width}
+>
+  <.button
+    variant="solid"
+    link_type="a"
+    to="/test-page"
+    label={gettext("Get in touch")}
+    color="primary"
+    size="lg"
+    class="mt-8"
+  />
+</LandingPage.solo_feature>

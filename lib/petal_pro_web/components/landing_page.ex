@@ -147,7 +147,7 @@ defmodule PetalProWeb.Components.LandingPage do
   def solo_feature(assigns) do
     ~H"""
     <section
-      id="benefits"
+      id="about_us"
       class="overflow-hidden transition duration-500 ease-in-out bg-gray-50 md:pt-0 dark:bg-gray-800 dark:text-white"
       data-offset="false"
     >
@@ -311,6 +311,7 @@ defmodule PetalProWeb.Components.LandingPage do
   end
 
   attr :title, :string, required: true
+  attr :max_width, :string, default: "lg", values: ["sm", "md", "lg", "xl", "full"]
 
   attr :sections, :list,
     default: [],
