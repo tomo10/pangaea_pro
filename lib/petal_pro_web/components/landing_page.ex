@@ -311,6 +311,52 @@ defmodule PetalProWeb.Components.LandingPage do
   end
 
   attr :title, :string, required: true
+
+  attr :sections, :list,
+    default: [],
+    doc:
+      "A list of sections, which are maps with the keys :icon (a HeroiconV1), :title and :description"
+
+  attr :grid_classes, :string,
+    default: "md:grid-cols-3",
+    doc: "Tailwind grid cols class to specify how many columns you want"
+
+  def manifesto(assigns) do
+    ~H"""
+    <section
+      id="manifesto"
+      class="py-24 text-gray-700 transition duration-500 ease-in-out md:py-32 dark:bg-gray-800 bg-gray-50 dark:text-white stagger-fade-in-animation"
+    >
+      <.container max_width={@max_width}>
+        <div class="mx-auto mb-16 text-center md:mb-20 lg:w-7/12 ">
+          <div class="mb-5 text-3xl font-bold md:mb-7 md:text-5xl fade-in-animation">
+            <%= @title %>
+          </div>
+        </div>
+
+        <div class={["stagger-fade-in-animation gap-y-8", @grid_classes]}>
+          <%= for section <- @sections do %>
+            <div class="px-8 mb-10 border-gray-200 md:px-16 fade-in-animation last:border-0">
+              <div class="flex justify-center mb-4 md:mb-6">
+                <span class="flex items-center justify-center w-12 h-12 rounded-md bg-primary-600">
+                  <.icon name={section.icon} class="w-6 h-6 text-white" />
+                </span>
+              </div>
+              <div class="mb-2 text-lg font-medium md:text-2xl">
+                <%= section.title %>
+              </div>
+              <p class="font-light text-justify leading-normal md:text-lg">
+                <%= section.description %>
+              </p>
+            </div>
+          <% end %>
+        </div>
+      </.container>
+    </section>
+    """
+  end
+
+  attr :title, :string, required: true
   attr :description, :string, required: true
   attr :max_width, :string, default: "lg", values: ["sm", "md", "lg", "xl", "full"]
 

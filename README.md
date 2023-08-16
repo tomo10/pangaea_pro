@@ -14,9 +14,13 @@
 
 In the relatively short time that humans have been the dominant species on this planet, the natural world has seen enormous suffering. By acting with scant regard for the natural world we have pushed animals to extinction and our rainforests and other biodiverse regions to the brink. This has profound implications for the future of our planet and the millions of species that call it home.
 
-As a planet of 7bn people we have struggled to gather the collective wisdom, garner the will, in order to coordinate and prevent the attrocities that are befalling our natural world on a daily basis. This has severe implications not only for the regions that we call home and the animals that share it with, but also for us. If, like me, you wonder are we fighting for our own futures, for theirs, or for the futures of every living thing on this planet, the fact is a world that is less biodiverse is a poorer one for all.
+As a group of 8bn people we have struggled to gather the collective wisdom or garner the will to coordinate and prevent the attrocities that are befalling our natural world on a daily basis. This has severe implications not only for the regions that we call home and the animals that we share it with, but also for us. If, like me, you wonder are we fighting for our own futures, for theirs, or for the futures of every living thing on this planet, the fact is a less biodiverse world is a poorer one for allkind.
 
-What can be done?
+What can be done ?
+
+People around the world are doing extraordinary things everyday in fields such as conservation, carbon capture, renewables, and countless other efforts in order to move us from a world reliant on technologies and food that, when opearted on the current scale, are destroying vital eco systems imperitive in the functioning of the planet.
+
+About us
 
 ## Get up and running
 

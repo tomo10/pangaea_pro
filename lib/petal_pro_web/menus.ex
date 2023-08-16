@@ -9,9 +9,8 @@ defmodule PetalProWeb.Menus do
   # Public menu (marketing related pages)
   def public_menu_items(_user \\ nil),
     do: [
-      %{label: gettext("Features"), path: "/#features"},
-      %{label: gettext("Testimonials"), path: "/#testimonials"},
-      %{label: gettext("Pricing"), path: "/#pricing"}
+      %{label: gettext("Manifesto"), path: "/#manifesto"},
+      %{label: gettext("Testimonials"), path: "/#testimonials"}
     ]
 
   # Signed out main menu
