@@ -5,6 +5,7 @@ defmodule PetalPro.Projects.Comment do
   schema "comments" do
     field(:content, :string)
     field(:creation_date, :date)
+    # creation date will be there automatically with timestamps so can be removed
 
     belongs_to(:user, PetalPro.Accounts.User)
     belongs_to(:project, PetalPro.Projects.Project)

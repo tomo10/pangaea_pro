@@ -24,13 +24,13 @@ We aim to be the first conservation crowdfunding platform and planet centric soc
 
 Pangaea is a vision that I have the following hopes for:
 
-1. There is work being done in the world by conservationists protecting rainforests, oceans, species on the brink of extinction, that often are under-resourced, lack funding, or sometimes people just don’t know they exist. I want these people to share their stories and projects and we will soon be adding the ability for them to raise the vital funds they need to do this work.
+1. There is work being done in the world by conservationists protecting rainforests, oceans, species on the brink of extinction, that often are under-resourced, lack funding, or sometimes people just don’t know they exist. I want these people to share their stories and projects, to make people aware of the vital work they are doing. Soon we'll be adding the ability for them to raise funds via the platform itself, incorporating as Stripe payments system.
 1. For many of us who do not have the time but may have resources (big or small) we invite you to donate whatever you can to these projects. The idea is one can either donate to a specific project or to the collective where the money will be distributed to the projects deemed, by you, as the most critical.
 1. If we are able to establish early success stories and traffic I would invite any environmentally conscious brands or companies to advertise themselves on our site. If you look at the business models of successful tech networks, they are able to drive millions of dollars of advertising revenue to shareholders. We would transer all of that income to the projects on the site. We want to act as a money generating scheme, driven by the democratic forces of the causes that are the most popular, to provide the financial resources needed to protect the planet.
 
 ## Get up and running
 
-**This is currently a work in progress. However due to the time sensitive nature of the overall problem any help or PRs would be welcome. See my contact info at tedwards.dev**
+**This is currently a work in progress. However due to the time sensitive nature of the problem at large any help, ideas, or PRs would be welcome. See my contact info at tedwards.dev if you would like to get in touch**
 
 **Assumptions:**
 
@@ -43,11 +43,6 @@ Pangaea is a vision that I have the following hopes for:
 1. `mix setup` (this get dependencies, setup database, migrations, seeds, install esbuild + Tailwind)
 1. `iex -S mix phx.server` (starts the server in IEX mode)
 1. Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
-
-**Moving forward:**
-
-- Do a global search for `SETUP_TODO` and follow the instructions to mold the boilerplate to your brand
-- Optional: Follow our tutorial ["Creating a web app from start to finish"](https://docs.petal.build/petal-pro-documentation/guides/creating-a-web-app-from-start-to-finish) to get an overview of Petal Pro
 
 ## Using Docker for Postgres
 
@@ -78,22 +73,6 @@ If running from Docker Desktop terminal go to Terminal tab
 
 `\! clear` clears screen
 
-## Renaming
-
-Uses the `rename_project` lib to rename the project.
-
-Run `mix rename CurrentName NewName`.
-
-For example:
-
-```
-mix rename PetalPro MyTwitterClone
-```
-
-Then you can delete the `rename_project` lib from your `mix.exs` and run `mix clean_mix_lock` to fully remove it from your deps folder.
-
-Note that it is not recommended to rename the project if you wish to keep pulling in Petal Pro updates. This is because it can be much harder to update after you have renamed. [Here is a guide](https://docs.saaspegasus.com/upgrading.html#using-branches-recommended) on how to keep up to date based on a similar framework in Python.
-
 ## Maintaining code quality as you develop
 
 Run `mix quality` to look for issues with your code. This will run each of these tasks:
@@ -105,7 +84,3 @@ Run `mix quality` to look for issues with your code. This will run each of these
 - `mix recode` (code quality)
 
 If the output is overwhelming, try running one at a time.
-
-## Contributing
-
-Petal Pro is a paid product but we welcome PR's if you find small bugs / typos / improvements. Let us know if you want to contribute in a more significant way and we can offer unlimited membership in return.
