@@ -8,9 +8,11 @@
 
 ## Manifesto
 
+**The problem**
+
 In the relatively short time that humans have been the dominant species on this planet, the natural world has seen enormous change. By acting with scant regard for the natural world we have pushed animals to extinction and our rainforests and other biodiverse regions to the brink. This has profound implications for the future of our planet and the millions of species that call it home.
 
-As a group of 8bn people we have struggled to gather the collective wisdom or garner the will to coordinate and prevent the attrocities that are befalling our natural world on a daily basis. This has severe implications not only for the regions that we call home and the animals that we share it with, but also for us. If, like me, you wonder are we fighting for our own futures, for theirs, or for the futures of every living thing on this planet, the fact is a less biodiverse world is a poorer one for allkind.
+As a group of 8bn people we have struggled to gather the collective wisdom or garner the will to coordinate and prevent the attrocities that are befalling our natural world on a daily basis. This has severe implications not only for the places that we live and the animals that we share it with, but also for us. If you, like me, wonder whether we are fighting for our own futures, for theirs, or for the futures of every living thing on this planet, the fact is a less biodiverse world is a poorer one for allkind.
 
 **What can be done ?**
 
